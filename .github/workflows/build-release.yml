@@ -8,8 +8,6 @@ on:
         required: true
       WAGO_API_TOKEN:
         required: true
-      WOWI_API_TOKEN:
-        required: true
 
 jobs:
   build:
@@ -23,7 +21,7 @@ jobs:
       - name: Run LuaCheck
         uses: BigWigsMods/actions/luacheck@master
         with:
-          config: https://raw.githubusercontent.com/SFX-WoW/shared/main/config/.luacheckrc
+          config: https://raw.githubusercontent.com/Skullcan/shared/main/config/.luacheckrc
 
       - name: Run Packager
         uses: BigWigsMods/packager@v2
@@ -31,4 +29,3 @@ jobs:
           CF_API_KEY: ${{ secrets.CF_API_KEY }}
           GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
           WAGO_API_TOKEN: ${{ secrets.WAGO_API_TOKEN }}
-          WOWI_API_TOKEN: ${{ secrets.WOWI_API_TOKEN }}

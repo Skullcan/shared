@@ -15,7 +15,7 @@ jobs:
       - name: Run LuaCheck
         uses: BigWigsMods/actions/luacheck@master
         with:
-          config: https://raw.githubusercontent.com/SFX-WoW/shared/main/config/.luacheckrc
+          config: https://raw.githubusercontent.com/Skullcan/shared/main/config/.luacheckrc
 
       - name: Run Packager
         uses: BigWigsMods/packager@v2

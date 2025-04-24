@@ -15,4 +15,4 @@ jobs:
       - name: Process Files
         uses: BigWigsMods/actions/luacheck@master
         with:
-          config: https://raw.githubusercontent.com/SFX-WoW/shared/main/config/.luacheckrc
+          config: https://raw.githubusercontent.com/Skullcan/shared/main/config/.luacheckrc
