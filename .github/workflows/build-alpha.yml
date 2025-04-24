@@ -1,0 +1,25 @@
+# Builds an alpha release.
+name: Build Package
+
+on: workflow_call
+
+jobs:
+  build:
+    name: Build Package
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v4
+
+      - name: Run LuaCheck
+        uses: BigWigsMods/actions/luacheck@master
+        with:
+          config: https://raw.githubusercontent.com/SFX-WoW/shared/main/config/.luacheckrc
+
+      - name: Run Packager
+        uses: BigWigsMods/packager@v2
+        env:
+          GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: -a 0 -p 0 -w 0
